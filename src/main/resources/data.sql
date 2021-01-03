@@ -1,10 +1,5 @@
 -- Initialisation des tables
-INSERT INTO Country(code, name) VALUES
-    ('FR', 'France'), -- Les clés sont auto-générées
-    ('UK', 'United Kingdom'),
-    ('US', 'United States of America');
-
-INSERT INTO Categorie VALUES 
+INSERT INTO Categorie(Code, Libelle, Description) VALUES
     ( 1, 'Boissons', 'Boissons, cafés, thés, bières'),
     ( 2, 'Condiments', 'Sauces, assaisonnements et épices'),
     ( 3, 'Desserts', 'Desserts et friandises'), 

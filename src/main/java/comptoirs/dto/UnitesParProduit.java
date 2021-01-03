@@ -1,4 +1,4 @@
-package comptoird.dto;
+package comptoirs.dto;
 /*
  *Utilisé pour représenter le résultat des requêtes statistiques
  * Cette interface sera auto-implémentée par Spring

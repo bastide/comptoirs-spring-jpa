@@ -3,6 +3,7 @@ package comptoirs;
 import java.util.List;
 import java.util.Optional;
 
+import comptoirs.dto.UnitesParProduit;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -10,7 +11,6 @@ import org.springframework.stereotype.Component;
 import lombok.extern.log4j.Log4j2;
 
 import comptoirs.entity.*;
-import comptoird.dto.*;
 import comptoirs.dao.*;
 
 @Component
@@ -24,7 +24,7 @@ public class ConsoleApp implements CommandLineRunner {
     private CategorieRepository categorieDAO;
 
     @Override
-    /**
+    /*
      * Equivalent de la méthode 'main' pour une application Spring Boot
      **/
     public void run(String... args) throws Exception {

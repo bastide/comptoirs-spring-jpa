@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
-import comptoird.dto.UnitesParProduit;
+import comptoirs.dto.UnitesParProduit;
 import comptoirs.entity.Produit;
 
 // This will be AUTO IMPLEMENTED by Spring 
@@ -24,7 +24,7 @@ public interface ProduitRepository extends JpaRepository<Produit, Integer> {
 		+ "JOIN p.lignes li "
 		+ "WHERE c.code = :codeCategorie "
 		+ "GROUP BY p.nom ")
-    public List<UnitesParProduit> produitsVendusJPQL(Integer codeCategorie);
+    List<UnitesParProduit> produitsVendusJPQL(Integer codeCategorie);
     
 	/**
 	 * Calcule le nombre d'unités vendues pour chaque produit d'une catégorie donnée.
@@ -41,6 +41,6 @@ public interface ProduitRepository extends JpaRepository<Produit, Integer> {
         "GROUP BY nom", 
         nativeQuery = true
     )
-    public List<UnitesParProduit> produitsVendusSQL(Integer codeCategorie);
+    List<UnitesParProduit> produitsVendusSQL(Integer codeCategorie);
 
 }
