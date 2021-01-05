@@ -39,31 +39,9 @@ public class Commande {
 	@Column(length = 40)
 	private String destinataire;
 
-	@Size(max = 60)
-	@Column(length = 60)
-	@ToString.Exclude
-	private String adresseLivraison;
-
-	@Size(max = 15)
-	@Column(length = 15)
-	@ToString.Exclude
-	private String villeLivraison;
-
-	@Size(max = 15)
-	@Column(length = 15)
-	@ToString.Exclude
-	private String regionLivraison;
-
-	@Size(max = 10)
-	@Column(length = 10)
-	@ToString.Exclude
-	private String codePostalLivraison;
-
-	@Size(max = 15)
-	@Column(length = 15)
-	@ToString.Exclude
-	private String paysLivraison;
-
+        @Embedded
+        private AdressePostale adresse;
+        
 	@Basic(optional = false)
 	@NonNull
 	@Column(nullable = false, precision = 10, scale = 2)

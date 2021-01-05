@@ -23,6 +23,9 @@ public class ConsoleApp implements CommandLineRunner {
     @Autowired
     private CategorieRepository categorieDAO;
 
+    @Autowired
+    private ClientRepository clientDAO;
+
     @Override
     /*
      * Equivalent de la méthode 'main' pour une application Spring Boot
@@ -65,7 +68,13 @@ public class ConsoleApp implements CommandLineRunner {
         );        
       
         tapezEnterPourContinuer();    
+        log.info("Pour un client, on trouve son adresse 'Embedded'");
+        Optional<Client> ocl = clientDAO.findById("BONAP");
+        ocl.ifPresent(cl -> {
+            log.info("On a trouvé l'adresse de 'BONAP' : {}", cl.getAdresse());
+        });
 
+        
     }
 
     public static void tapezEnterPourContinuer() throws Exception {

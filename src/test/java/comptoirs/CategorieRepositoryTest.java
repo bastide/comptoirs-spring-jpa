@@ -104,7 +104,7 @@ class CategorieRepositoryTest {
 		// de violation de contrainte d'intégrité
 		assertThrows(DataIntegrityViolationException.class, () -> {
 			categoryDAO.delete(boissons);
-			categoryDAO.flush();
+			categoryDAO.flush(); // Pour forcer la validation de la transaction
 		});
 	}
 

@@ -182,7 +182,7 @@ INSERT INTO Client(Code, Societe, Contact, Fonction, Adresse, Ville, Region, Cod
 	( 'WOLZA', 'Wolski  Zajazd', 'Zbyszek Piestrzeniewicz', 'Propriétaire', 'ul. Filtrowa 68', 'Warszawa', NULL, '01-012', 'Pologne', '(26) 642-7012', '(26) 642-7012');
 
 
-INSERT INTO Commande(Numero, Client_Code, SaisieLe, EnvoyeeLe, Port, Destinataire, Adresse_Livraison, Ville_Livraison, Region_Livraison, Code_Postal_Livraison, Pays_Livraison, Remise) VALUES 
+INSERT INTO Commande(Numero, Client_Code, SaisieLe, EnvoyeeLe, Port, Destinataire, Adresse, Ville, Region, Code_Postal, Pays, Remise) VALUES 
 	( 10248, 'VINET', '1994-08-04', '1994-08-16', 161.00, 'Vins et alcools Chevalier', '59 rue de l''Abbaye', 'Reims', NULL, '51100', 'France', 0.00),
 	( 10249, 'TOMSP', '1994-08-05', '1994-08-10', 58.00, 'Toms Spezialitäten', 'Luisenstr. 48', 'Münster', NULL, '44087', 'Allemagne', 0.00),
 	( 10250, 'HANAR', '1994-08-08', '1994-08-12', 329.00, 'Hanari Carnes', 'Rua do Paço, 67', 'Rio de Janeiro', 'RJ', '05454-876', 'Brésil', 0.00),

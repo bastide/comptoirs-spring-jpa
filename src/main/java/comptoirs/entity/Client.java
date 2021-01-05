@@ -33,26 +33,9 @@ public class Client {
 	@Column(length = 30)
 	private String fonction;
 	
-	@Size(max = 60)
-	@Column(length = 60)
-	private String adresse;
-	
-	@Size(max = 15)
-	@Column(length = 15)
-	private String ville;
-	
-	@Size(max = 15)
-	@Column(length = 15)
-	private String region;
-	
-	@Size(max = 10)
-	@Column(length = 10)
-	private String codePostal;
-	
-	@Size(max = 15)
-	@Column(length = 15)
-	private String pays;
-	
+        @Embedded
+        private AdressePostale adresse;
+        
 	@Size(max = 24)
 	@Column(length = 24)
 	private String telephone;
@@ -66,6 +49,7 @@ public class Client {
 	private String fax;
 	
 	@OneToMany(mappedBy = "client")
+	@ToString.Exclude
 	private List<Commande> commandes = new ArrayList<>();
 
 
