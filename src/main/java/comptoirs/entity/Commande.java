@@ -40,7 +40,7 @@ public class Commande {
 	private String destinataire;
 
         @Embedded
-        private AdressePostale adresse;
+        private AdressePostale adresseLivraison;
         
 	@Basic(optional = false)
 	@NonNull
