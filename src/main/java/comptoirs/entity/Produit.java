@@ -37,7 +37,7 @@ public class Produit {
 
 	private short indisponible = 0;
 
-	@ManyToOne
+	@ManyToOne(optional = false)
 	@NonNull
 	private Categorie categorie ;
 

@@ -10,4 +10,5 @@ import comptoirs.entity.Client;
 // This will be AUTO IMPLEMENTED by Spring 
 
 public interface ClientRepository extends JpaRepository<Client, String> {
+    Client findBySociete(String societe);
 }

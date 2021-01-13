@@ -74,6 +74,10 @@ public class ConsoleApp implements CommandLineRunner {
             log.info("On a trouvé l'adresse de 'BONAP' : {}", cl.getAdresse());
         });
 
+        tapezEnterPourContinuer();    
+
+        Client cli = clientDAO.findBySociete("Alfreds Futterkiste");
+        log.info("On a trouvé le client {}",cli);
         
     }
 
