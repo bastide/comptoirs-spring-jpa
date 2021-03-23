@@ -48,7 +48,7 @@ public class Client {
 	@Column(length = 24)
 	private String fax;
 	
-	@OneToMany(mappedBy = "client")
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "client")
 	@ToString.Exclude
 	private List<Commande> commandes = new ArrayList<>();
 

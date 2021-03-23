@@ -7,6 +7,7 @@ import lombok.*;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.LinkedList;
 import java.util.List;
 
 @Entity
@@ -47,8 +48,8 @@ public class Commande {
 	@Column(nullable = false, precision = 10, scale = 2)
 	private BigDecimal remise = BigDecimal.ZERO;
 
-	@OneToMany(mappedBy = "commande")
-	private List<Ligne> lignes;
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "commande", orphanRemoval = true)
+	private List<Ligne> lignes  = new LinkedList<>();
 
 	@ManyToOne(optional = false)
 	@NonNull

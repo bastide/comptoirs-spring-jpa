@@ -26,7 +26,7 @@ public class Categorie {
 	private String description;
 
 	@ToString.Exclude
-	@OneToMany(mappedBy = "categorie", cascade = CascadeType.PERSIST)
+	@OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REFRESH}, mappedBy = "categorie")
 	private List<Produit> produits = new LinkedList<>();
 
 }
