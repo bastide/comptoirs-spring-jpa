@@ -33,8 +33,8 @@ public class Client {
 	@Column(length = 30)
 	private String fonction;
 	
-        @Embedded
-        private AdressePostale adresse;
+    @Embedded
+    private AdressePostale adresse;
         
 	@Size(max = 24)
 	@Column(length = 24)

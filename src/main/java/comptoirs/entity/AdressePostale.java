@@ -1,13 +1,12 @@
 package comptoirs.entity;
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Embeddable;
 import javax.validation.constraints.Size;
 
-import lombok.*;
+import lombok.Data;
 
-import java.util.ArrayList;
-import java.util.List;
-
-@Embeddable // Ne donne pas lieu à une table relationnelle séparé
+@Embeddable // Ne donne pas lieu à une table relationnelle séparée
+//@Emmbedded dans Client et Commande
 @Data //Lombok, @Getter @Setter @NoArgsConstructor  @RequiredArgsConstructor @ToString
 public class AdressePostale {
 	@Size(max = 60)

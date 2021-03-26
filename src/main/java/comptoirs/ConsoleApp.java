@@ -1,5 +1,6 @@
 package comptoirs;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
 
@@ -81,7 +82,7 @@ public class ConsoleApp implements CommandLineRunner {
         
     }
 
-    public static void tapezEnterPourContinuer() throws Exception {
+    public static void tapezEnterPourContinuer() throws IOException  {
         System.out.println("Tapez \"ENTER\" pour continuer...");
         System.in.read();
     }
