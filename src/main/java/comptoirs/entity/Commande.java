@@ -3,6 +3,8 @@ package comptoirs.entity;
 import javax.persistence.*;
 import javax.validation.constraints.Size;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import lombok.*;
 
 import java.math.BigDecimal;
@@ -11,7 +13,11 @@ import java.util.LinkedList;
 import java.util.List;
 
 @Entity
-@Getter @Setter @NoArgsConstructor @RequiredArgsConstructor @ToString
+@Getter
+@Setter
+@NoArgsConstructor
+@RequiredArgsConstructor
+@ToString
 public class Commande {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -40,16 +46,16 @@ public class Commande {
 	@Column(length = 40)
 	private String destinataire;
 
-        @Embedded
-        private AdressePostale adresseLivraison;
-        
+	@Embedded
+	private AdressePostale adresseLivraison;
+
 	@Basic(optional = false)
 	@NonNull
 	@Column(nullable = false, precision = 10, scale = 2)
 	private BigDecimal remise = BigDecimal.ZERO;
 
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "commande", orphanRemoval = true)
-	private List<Ligne> lignes  = new LinkedList<>();
+	private List<Ligne> lignes = new LinkedList<>();
 
 	@ManyToOne(optional = false)
 	@NonNull

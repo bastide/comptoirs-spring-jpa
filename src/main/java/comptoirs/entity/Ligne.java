@@ -1,6 +1,7 @@
 package comptoirs.entity;
 
 import javax.persistence.*;
+
 import lombok.*;
 
 @Entity
