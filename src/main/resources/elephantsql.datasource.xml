@@ -1,0 +1,28 @@
+#DataSourceSettings#
+#LocalDataSource: comptoirs sur elephantsql
+#BEGIN#
+<data-source source="LOCAL" name="comptoirs sur elephantsql" group="datasources"
+             uuid="5f8fbb14-e49c-4ed0-92d7-d056655d4564">
+    <database-info product="PostgreSQL" version="13.8 (Ubuntu 13.8-1.pgdg20.04+1)" jdbc-version="4.2"
+                   driver-name="PostgreSQL JDBC Driver" driver-version="42.5.0" dbms="POSTGRES" exact-version="13.8"
+                   exact-driver-version="42.5">
+        <identifier-quote-string>&quot;</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact"/>
+    <driver-ref>postgresql</driver-ref>
+    <synchronize>true</synchronize>
+    <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+    <jdbc-url>jdbc:postgresql://lucky.db.elephantsql.com:5432/vbafkpee</jdbc-url>
+    <secret-storage>master_key</secret-storage>
+    <user-name>vbafkpee</user-name>
+    <schema-mapping>
+        <introspection-scope>
+            <node kind="database" qname="@">
+                <node kind="schema" qname="@"/>
+            </node>
+        </introspection-scope>
+    </schema-mapping>
+    <working-dir>$ProjectFileDir$</working-dir>
+</data-source>
+#END#
+

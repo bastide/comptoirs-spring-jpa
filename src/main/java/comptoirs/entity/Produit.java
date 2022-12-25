@@ -1,6 +1,6 @@
 package comptoirs.entity;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 import lombok.*;
 
@@ -13,7 +13,7 @@ import java.util.List;
 public class Produit {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Setter(AccessLevel.NONE) // la clé est auto-générée par la BD, On ne veut pas de "setter"
+	@Setter(AccessLevel.NONE) // la clé est autogénérée par la BD, On ne veut pas de "setter"
 	private Integer reference = null;
 
 	@NonNull

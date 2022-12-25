@@ -1,0 +1,32 @@
+#DataSourceSettings#
+#LocalDataSource: comptoirs sur render.com
+#BEGIN#
+<data-source source="LOCAL" name="comptoirs sur render.com" group="datasources"
+             uuid="828208af-387f-4e30-932e-4d04866cc6f1">
+    <database-info product="PostgreSQL" version="15.0" jdbc-version="4.2" driver-name="PostgreSQL JDBC Driver"
+                   driver-version="42.5.0" dbms="POSTGRES" exact-version="15.0" exact-driver-version="42.5">
+        <identifier-quote-string>&quot;</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact"/>
+    <driver-ref>postgresql</driver-ref>
+    <synchronize>true</synchronize>
+    <configured-by-url>true</configured-by-url>
+    <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+    <jdbc-url>jdbc:postgresql://dpg-ce3nr19a6gdru5kmboh0-a.frankfurt-postgres.render.com/comptoirs</jdbc-url>
+    <secret-storage>master_key</secret-storage>
+    <user-name>jpa</user-name>
+    <schema-mapping>
+        <introspection-scope>
+            <node kind="database" qname="comptoirs">
+                <node kind="schema" qname="public"/>
+            </node>
+        </introspection-scope>
+    </schema-mapping>
+    <working-dir>$ProjectFileDir$</working-dir>
+    <ssl-config>
+        <enabled>true</enabled>
+        <mode>REQUIRE</mode>
+    </ssl-config>
+</data-source>
+#END#
+

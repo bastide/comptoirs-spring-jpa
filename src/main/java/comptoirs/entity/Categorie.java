@@ -3,8 +3,8 @@ package comptoirs.entity;
 import java.util.LinkedList;
 import java.util.List;
 
-import javax.persistence.*;
-import javax.validation.constraints.Size;
+import jakarta.persistence.*;
+import jakarta.validation.constraints.Size;
 
 import lombok.*;
 
