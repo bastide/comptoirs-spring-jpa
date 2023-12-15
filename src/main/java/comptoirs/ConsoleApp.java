@@ -4,13 +4,13 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
 
-import comptoirs.dto.UnitesParProduit;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import lombok.extern.log4j.Log4j2;
 
+import comptoirs.projection.UnitesParProduit;
 import comptoirs.entity.*;
 import comptoirs.dao.*;
 
