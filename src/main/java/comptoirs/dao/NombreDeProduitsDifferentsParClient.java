@@ -1,9 +1,9 @@
-package comptoirs.projection;
+package comptoirs.dao;
 /*
  *Utilisé pour représenter le résultat des requêtes statistiques
  * Cette interface sera auto-implémentée par Spring
  */
-public interface UnitesParProduit {
-	String getNom();
-	Long getUnites();
+public interface NombreDeProduitsDifferentsParClient {
+	String getSociete();
+	Long getNombre();
 }

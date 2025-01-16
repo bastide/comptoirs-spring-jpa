@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 
 import lombok.extern.log4j.Log4j2;
 
-import comptoirs.projection.UnitesParProduit;
+import comptoirs.dao.UnitesCommandeesParProduit;
 import comptoirs.entity.*;
 import comptoirs.dao.*;
 
@@ -26,6 +26,9 @@ public class ConsoleApp implements CommandLineRunner {
 
     @Autowired
     private ClientRepository clientDAO;
+
+    @Autowired
+    private CommandeRepository commandeDAO;
 
     @Override
     /*
@@ -55,9 +58,9 @@ public class ConsoleApp implements CommandLineRunner {
 
         log.info("Exécution d'une requête 'custom' JPQL");
         int codeCategorie = 1;
-        List<UnitesParProduit> resultat = produitDAO.produitsVendusJPQL(codeCategorie);
+        List<UnitesCommandeesParProduit> resultat = produitDAO.produitsVendusJPQL(codeCategorie);
         resultat.forEach( // Une autre syntaxe pour itérer sur une liste !
-            ligne -> log.info("Pour {} on a vendu {} unités", ligne.getNom(), ligne.getUnites())
+            ligne -> log.info("Pour {} on a vendu {} unités", ligne.getNomProduit(), ligne.getUnitesCommandees())
         );        
          
         tapezEnterPourContinuer();
@@ -65,7 +68,7 @@ public class ConsoleApp implements CommandLineRunner {
         log.info("Même requête en SQL natif");
         resultat = produitDAO.produitsVendusSQL(codeCategorie);
         resultat.forEach( 
-            ligne -> log.info("Pour {} on a vendu {} unités", ligne.getNom(), ligne.getUnites())
+            ligne -> log.info("Pour {} on a vendu {} unités", ligne.getNomProduit(), ligne.getUnitesCommandees())
         );        
       
         tapezEnterPourContinuer();    
@@ -76,10 +79,19 @@ public class ConsoleApp implements CommandLineRunner {
         });
 
         tapezEnterPourContinuer();    
-
-        Client cli = clientDAO.findBySociete("Alfreds Futterkiste");
+        log.info("Recherche par nom de société");
+        Client cli = clientDAO.findBySociete("Alfreds Futterkiste").orElseThrow();
         log.info("On a trouvé le client {}",cli);
-        
+
+        tapezEnterPourContinuer();
+        log.info("Nombre de produits différents commandés par un client");
+        log.info("Le client 'ALFKI' a commandé {} produits différents", clientDAO.countDistinctProduitsByCode("ALFKI"));
+
+        tapezEnterPourContinuer();
+        log.info("Nombre de produits différents commandés par chaque client");
+        clientDAO.produitsParClient().forEach(
+            ppc -> log.info("Le client {} a commandé {} produits différents", ppc.getSociete(), ppc.getNombre())
+        );
     }
 
     public static void tapezEnterPourContinuer() throws IOException  {

@@ -1,4 +1,4 @@
-package comptoirs;
+package comptoirs.dao;
 import java.util.List;
 import java.util.Optional;
 
@@ -8,11 +8,9 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.dao.DataIntegrityViolationException;
-import org.springframework.test.context.jdbc.Sql;
 
 import lombok.extern.log4j.Log4j2;
 
-import comptoirs.dao.CategorieRepository;
 import comptoirs.entity.Categorie;
 
 @DataJpaTest
@@ -83,7 +81,7 @@ class CategorieRepositoryTest {
 		Categorie nouvelle = new Categorie();
 		nouvelle.setLibelle("Boissons");  // Ce libellé existe dans le jeu de test
 		nouvelle.setDescription("essai");
-		try { // L'enregistreement peut générer des exceptions (ex : violation de contrainte d'intégrité)
+		try { // L'enregistrement peut générer des exceptions (ex : violation de contrainte d'intégrité)
 			categoryDAO.save(nouvelle);
 			fail("Les libellés doivent être tous distincts, on doit avoir une exception");
 		} catch (DataIntegrityViolationException e) {
