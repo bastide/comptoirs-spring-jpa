@@ -40,9 +40,7 @@ public class ConsoleApp implements CommandLineRunner {
 
         log.info("Recherche par clé");
         Optional<Produit> op = produitDAO.findById(1);
-        op.ifPresent(p -> {
-            log.info("On a trouvé le produit : {}", p);
-        });
+        op.ifPresent(p -> log.info("On a trouvé le produit : {}", p));
 
         tapezEnterPourContinuer();
 
@@ -74,9 +72,7 @@ public class ConsoleApp implements CommandLineRunner {
         tapezEnterPourContinuer();    
         log.info("Pour un client, on trouve son adresse 'Embedded'");
         Optional<Client> ocl = clientDAO.findById("BONAP");
-        ocl.ifPresent(cl -> {
-            log.info("On a trouvé l'adresse de 'BONAP' : {}", cl.getAdresse());
-        });
+        ocl.ifPresent(cl -> log.info("On a trouvé l'adresse de 'BONAP' : {}", cl.getAdresse()));
 
         tapezEnterPourContinuer();    
         log.info("Recherche par nom de société");
