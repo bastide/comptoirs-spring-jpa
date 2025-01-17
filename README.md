@@ -62,4 +62,4 @@ Testez cette méthode dans [`ConsoleApp`](./src/main/java/comptoirs/ConsoleApp.j
 
 ![requête](doc/requete.png)
 
-*Figure 2 : Exemple de résultats attendus pour la requête (client ALFKI)*
+*Figure 3 : Exemple de résultats attendus pour la requête (client ALFKI)*
